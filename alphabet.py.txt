@@ -1,0 +1,17 @@
+import string
+
+n = int(raw_input())
+
+m = n - 1
+
+for i in range(n - 1, 0, -1):
+    row = ['-'] * (2 * n - 1)
+    for j in range(n - i):
+        row[m - j] = row[m + j] = string.ascii_lowercase[j + i]
+    print '-'.join(row)
+
+for i in range(0, n):
+    row = ['-'] * (2 * n - 1)
+    for j in range(0, n - i):
+        row[m - j] = row[m + j] = string.ascii_lowercase[j + i]
+    print '-'.join(row)
